@@ -29,49 +29,91 @@
             "prototype": "montage/ui/flow.reel",
             "properties": {
                 "element": {"#": "flow"},
+                "cameraFov": 50,
                 "cameraPosition": [
                     0,
                     0,
                     1500
                 ],
+                "cameraTargetPoint": [
+                    0,
+                    0,
+                    0
+                ],
                 "contentController": {"@": "locationController"},
+                "flowEditorMetadata": {
+                    "flowEditorVersion": 0.1,
+                    "shapes": [
+                        {
+                            "type": "FlowSpline",
+                            "name": "Spline 1",
+                            "pathIndex": 0
+                        }
+                    ]
+                },
+                "hasSelectedIndexScrolling": false,
+                "isSelectionEnabled": false,
+                "linearScrollingVector": [
+                    -300,
+                    0
+                ],
                 "paths": [
                     {
                         "knots": [
                             {
-                                "knotPosition": [
-                                    -2400,
-                                    0,
-                                    -1
-                                ],
-                                "nextHandlerPosition": [
-                                    -800,
-                                    0,
-                                    -1
-                                ],
+                                "previousHandlerPosition": [],
+                                "nextDensity": 10,
                                 "previousDensity": 10,
-                                "nextDensity": 10
+                                "knotPosition": [
+                                    -2635.2941176470586,
+                                    39.21568627450961,
+                                    1044.7516339869278
+                                ],
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "rotateZ": 0,
+                                "opacity": 1,
+                                "nextHandlerPosition": [
+                                    -1035.2941176470586,
+                                    39.21568627450961,
+                                    1044.7516339869278
+                                ]
                             },
                             {
                                 "knotPosition": [
-                                    2400,
-                                    0,
-                                    -1
+                                    2282.3529411764703,
+                                    13.071895424836384,
+                                    1044.7516339869278
                                 ],
+                                "nextHandlerPosition": [],
                                 "previousHandlerPosition": [
-                                    800,
-                                    0,
-                                    -1
+                                    682.3529411764703,
+                                    13.071895424836384,
+                                    1044.7516339869278
                                 ],
+                                "nextDensity": 10,
                                 "previousDensity": 10,
-                                "nextDensity": 10
+                                "rotateX": 0,
+                                "rotateY": 0,
+                                "rotateZ": 0,
+                                "opacity": 1
                             }
                         ],
+                        "units": {
+                            "rotateX": "",
+                            "rotateY": "",
+                            "rotateZ": "",
+                            "opacity": ""
+                        },
                         "headOffset": 0,
-                        "tailOffset": 0,
-                        "units": {}
+                        "tailOffset": 0
                     }
-                ]
+                ],
+                "scrollingTransitionDuration": 500,
+                "scrollingTransitionTimingFunction": "ease",
+                "scrollVectorX": true,
+                "scrollVectorY": true,
+                "selectedIndexScrollingOffset": 0
             }
         },
         "image": {
@@ -173,7 +215,7 @@
             </p>
             <p data-montage-id="text"></p>
         </div>
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
+        <div style="position: absolute; top: 300; left: 0; right: 0; bottom: 0" data-montage-id="flow">
             <div class="flow-item">
                 <p data-montage-id="text2">
 
