@@ -13,12 +13,11 @@
                 "element": {"#": "main"}
             }
         },
-        "button": {
-            "prototype": "digit/ui/button.reel",
+        "location": {
+            "prototype": "ui/location.reel",
             "properties": {
-                "element": {"#": "button"},
-                "enabled": true,
-                "label": "Click Me"
+                "element": {"#": "location"},
+                "placeQuery": "test"
             }
         }
     }
@@ -26,7 +25,7 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <button data-montage-id="button"></button>
+        <div data-montage-id="location"></div>
     </div>
 </body>
 </html>

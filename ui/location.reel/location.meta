@@ -1,0 +1,68 @@
+{
+  "blueprint_component_reference": {
+    "prototype": "montage/core/meta/blueprint-reference",
+    "properties": {
+      "valueReference": {
+        "blueprintName": "Component",
+        "blueprintModule": {
+          "%": "montage/ui/component.meta"
+        }
+      }
+    }
+  },
+  "blueprint_unnamed_placeQuery": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "placeQuery",
+      "blueprint": {"@": "root"}
+    }
+  },
+  "blueprint_unnamed_latitude": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "latitude",
+      "blueprint": {"@": "root"},
+      "valueType": "number"
+    }
+  },
+  "blueprint_unnamed_longitude": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "longitude",
+      "blueprint": {"@": "root"},
+      "valueType": "number"
+    }
+  },
+  "blueprint_unnamed_results": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "results",
+      "blueprint": {"@": "root"}
+    }
+  },
+  "root": {
+    "prototype": "montage/core/meta/module-blueprint",
+    "properties": {
+      "name": null,
+      "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_placeQuery"},
+        {"@": "blueprint_unnamed_latitude"},
+        {"@": "blueprint_unnamed_longitude"},
+        {"@": "blueprint_unnamed_results"}
+      ],
+      "propertyBlueprintGroups": {
+        "Location": [
+          {"@": "blueprint_unnamed_placeQuery"},
+          {"@": "blueprint_unnamed_latitude"},
+          {"@": "blueprint_unnamed_longitude"},
+          {"@": "blueprint_unnamed_results"}
+        ]
+      },
+      "module": {
+        "%": "ui/location.reel"
+      },
+      "exportName": "Location"
+    }
+  }
+}

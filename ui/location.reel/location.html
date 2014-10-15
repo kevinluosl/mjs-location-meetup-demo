@@ -9,12 +9,156 @@
             "properties": {
                 "element": {"#": "owner"}
             }
+        },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Search"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+        "flow": {
+            "prototype": "montage/ui/flow.reel",
+            "properties": {
+                "element": {"#": "flow"},
+                "cameraPosition": [
+                    0,
+                    0,
+                    1500
+                ],
+                "paths": [
+                    {
+                        "knots": [
+                            {
+                                "knotPosition": [
+                                    -2400,
+                                    0,
+                                    -1
+                                ],
+                                "nextHandlerPosition": [
+                                    -800,
+                                    0,
+                                    -1
+                                ],
+                                "previousDensity": 10,
+                                "nextDensity": 10
+                            },
+                            {
+                                "knotPosition": [
+                                    2400,
+                                    0,
+                                    -1
+                                ],
+                                "previousHandlerPosition": [
+                                    800,
+                                    0,
+                                    -1
+                                ],
+                                "previousDensity": 10,
+                                "nextDensity": 10
+                            }
+                        ],
+                        "headOffset": 0,
+                        "tailOffset": 0,
+                        "units": {}
+                    }
+                ]
+            }
+        },
+        "image": {
+            "prototype": "digit/ui/image.reel",
+            "properties": {
+                "element": {"#": "image"},
+                "crossOrigin": null,
+                "src": "http://raw.githubusercontent.com/segphault/mjs-location-demo/master/assets/images/powered-by-google-on-white2.png"
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"}
+            },
+            "bindings": {
+                "content": {"<-": "@owner.results"}
+            }
+        },
+        "text": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "text"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object.vicinity"}
+            }
+        },
+        "text1": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text1"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object.name"}
+            }
+        },
+        "textField": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField"},
+                "placeholderValue": "Text"
+            },
+            "bindings": {
+                "value": {"<->": "@owner.placeQuery"}
+            }
+        },
+        "textLat": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "textLat"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.latitude"}
+            }
+        },
+        "textLon": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "textLon"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.longitude"}
+            }
         }
     }
     </script>
 </head>
 <body>
     <div data-montage-id="owner" class="Location">
+        <p data-montage-id="textLat"></p>
+        <p data-montage-id="textLon"></p>
+        <img data-montage-id="image">
+        <input data-montage-id="textField" type="text">
+        <button data-montage-id="button"></button>
+        <div class="place" data-montage-id="repetition">
+            <p data-montage-id="text1">
+
+            </p>
+            <p data-montage-id="text"></p>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
+            <div></div>
+        </div>
     </div>
 </body>
 </html>
