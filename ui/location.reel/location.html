@@ -34,6 +34,7 @@
                     0,
                     1500
                 ],
+                "contentController": {"@": "locationController"},
                 "paths": [
                     {
                         "knots": [
@@ -81,6 +82,12 @@
                 "src": "http://raw.githubusercontent.com/segphault/mjs-location-demo/master/assets/images/powered-by-google-on-white2.png"
             }
         },
+        "locationController": {
+            "prototype": "montage/core/range-controller",
+            "bindings": {
+                "content": {"<-": "@owner.results"}
+            }
+        },
         "repetition": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
@@ -108,6 +115,13 @@
             },
             "bindings": {
                 "value": {"<-": "@repetition:iteration.object.name"}
+            }
+        },
+        "text2": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text2"},
+                "value": "Text"
             }
         },
         "textField": {
@@ -157,7 +171,9 @@
             <p data-montage-id="text"></p>
         </div>
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
-            <div></div>
+            <div class="flow-item" >
+                <p data-montage-id="text2">
+            </div>
         </div>
     </div>
 </body>
