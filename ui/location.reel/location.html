@@ -122,6 +122,9 @@
             "properties": {
                 "element": {"#": "text2"},
                 "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@flow:iteration.object.name"}
             }
         },
         "textField": {
@@ -171,8 +174,10 @@
             <p data-montage-id="text"></p>
         </div>
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0" data-montage-id="flow">
-            <div class="flow-item" >
+            <div class="flow-item">
                 <p data-montage-id="text2">
+
+                </p>
             </div>
         </div>
     </div>
